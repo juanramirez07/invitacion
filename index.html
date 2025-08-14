@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitación Especial</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <section class="fondo fondo1">
+    <div class="titulo-milagros">
+     <span>M</span><span>i</span><span>l</span><span>a</span><span>g</span><span>r</span><span>o</span><span>s</span>
+    </div>
+
+       <!-- 🦋 Mariposas animadas -->
+     <img src="imagenes/mariposa 1.png" class="mariposa flotante" style="top: 20vh; left: 70vw;" />
+     <img src="imagenes/mariposa 2.png" class="mariposa flotante" style="top: 10vh; left: 30vw;" />
+     <img src="imagenes/mariposa 3.png" class="mariposa flotante" style="top: 35vh; left: 80vw;" />
+     <img src="imagenes/mariposa 4.png" class="mariposa" style="top: 50vh; left: 80vw;" />
+     <img src="imagenes/mariposa 5.png" class="mariposa" style="top: 30vh; left: 50vw;" />
+     <img src="imagenes/mariposa 6.png" class="mariposa" style="top: 2vh; left: 10vw;" />
+     <img src="imagenes/mariposa 7.png" class="mariposa grande" style="top: 12vh; left: 55vw;" />
+     <img src="imagenes/mariposa 8.png" class="mariposa" style="top: 2vh; left: 80vw;" />
+     <img src="mariposa9.png" class="mariposa grande" style="top: 80%; left: 80%;" />
+     <img src="mariposa10.png" class="mariposa" style="top: 90%; left: 5%;" />
+    
+      <!-- 🎵 Mensaje arriba del reproductor -->
+<div id="mensajeReproduccion" class="mensaje-reproduccion">
+  Presioná ▶ para reproducir la canción.
+</div>
+
+     <!-- 🎵 Reproductor de audio -->
+    <div class="reproductor-foto reproductor-abajo">
+
+  <audio id="audio" src="audio/Dove Cameron-If Only.mp3"></audio>
+
+   <div class="barra-superior">
+    <input type="range" id="progreso" value="0" step="1">
+  </div>
+
+  <div class="contenido">
+    <button id="playPause" onclick="togglePlay()">▶</button>
+
+    <div class="icono-musica">
+      🎵
+    </div>
+
+    <div class="titulo">
+      Dove Cameron-If Only
+    </div>
+
+    <div class="acciones">
+      <div class="volumen-container">
+  <button id="volumenBtn" onclick="toggleVolumenUI()">🔊</button>
+  <input type="range" id="volumenSlider" min="0" max="1" step="0.01" value="1">
+</div>
+
+      <button>📃</button>
+      <button>⬇</button>
+    </div>
+    </div>
+      </div>
+
+   </div>
+   </section>
+   <section class="fondo fondo2"></section>
+
+   <section class="fondo fondo3">
+    <div class="contador">
+  
+  <div class="tiempo">
+    <div><span id="dias">00</span><p>Días</p></div>
+    <div><span id="horas">00</span><p>Horas</p></div>
+    <div><span id="minutos">00</span><p>Minutos</p></div>
+  </div>
+</div>
+     <div class="mapa">
+  <iframe
+    src="https://maps.google.com/maps?q=Av.%20Int.%20Carlos%20Ratti%202195.%20Ituzaingo&t=m&z=16&ie=UTF8&iwloc=B&output=embed" 
+    width="300" 
+    height="200" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy">
+  </iframe>
+</div>
+
+
+   </section>
+   <section class="fondo fondo4"></section>
+
+   <script src="script.js"></script>
+</body>
+</html>

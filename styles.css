@@ -1,0 +1,317 @@
+body {
+  margin: 0; /* Elimina los márgenes por defecto del navegador */
+  padding: 0; /* Elimina el padding por defecto */
+  font-family: sans-serif; /* Establece una fuente sencilla para todo el sitio */
+  overflow-x: hidden; /* 🧹 Evita scroll horizontal en todo el sitio */
+}
+
+.fondo {
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el espacio */
+  background-position: center; /* Centra la imagen de fondo */
+  display: flex; /* Permite centrar contenido usando flexbox */
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  color: rgb(42, 61, 233); /* Color del texto dentro de cada sección de fondo */
+  text-align: center; /* Centra el texto */
+  position: relative; /* Necesario para posicionar elementos hijos */ 
+  overflow: hidden;
+}
+
+.fondo1 { 
+  position: relative;
+  background-image: url('imagenes/primero\ vertical.jpg');  /* Primera imagen con reproductor */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.fondo2 { 
+  position: relative;
+  background-image: url('imagenes/segundo.jpg');  /* Segunda imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.fondo3 { background-image: url('imagenes/terecero.jpg'); } /* Tercera imagen (libre para usar) */
+.fondo4 { background-image: url('imagenes/cuarto.jpg'); } /* Cuarta imagen (libre para usar) */
+
+.titulo-milagros {
+  position: absolute; /* 🔒 Se queda fijo en pantalla */
+  top: 45vh;
+  left: 50vw;
+  transform: translateX(-50%);
+  font-family: 'Adelia', cursive;
+  font-size: 60px;
+  color: rgb(6, 90, 187);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  z-index: 10; /* 🔝 Delante de las mariposas */
+  display: flex;
+  gap: 2px;
+}
+
+.titulo-milagros span {
+  opacity: 0;
+  animation: aparecerLetra 0.5s forwards;
+}
+
+.titulo-milagros span:nth-child(1) { animation-delay: 0s; }
+.titulo-milagros span:nth-child(2) { animation-delay: 0.2s; }
+.titulo-milagros span:nth-child(3) { animation-delay: 0.4s; }
+.titulo-milagros span:nth-child(4) { animation-delay: 0.6s; }
+.titulo-milagros span:nth-child(5) { animation-delay: 0.8s; }
+.titulo-milagros span:nth-child(6) { animation-delay: 1s; }
+.titulo-milagros span:nth-child(7) { animation-delay: 1.2s; }
+.titulo-milagros span:nth-child(8) { animation-delay: 1.4s; }
+
+@keyframes aparecerLetra {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.mensaje-reproduccion {
+  position: absolute; /* 🔧 Permite ubicarlo libremente */
+  top: 78%;            /* 📍 Distancia desde el borde superior */
+  left: 50%;           /* 📌 Centrado horizontal */
+  transform: translateX(-50%); /* 🎯 Centrado perfecto */
+  text-align: center;
+  font-size: 16px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 8px;
+  border-radius: 8px;
+  max-width: 600px;
+  z-index: 30; /* 🔝 Asegura que esté por encima de otros elementos */
+}
+
+/* 🎵 Reproductor de audio */
+.reproductor-foto {
+  background-color: black;
+  color: white;
+  font-family: sans-serif;
+  padding: 10px;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.barra-superior input[type="range"] {
+  width: 100%;
+  height: 4px;
+  background: #444;
+  appearance: none;
+}
+
+.barra-superior input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.contenido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+#playPause {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.icono-musica {
+  font-size: 24px;
+  margin-left: 10px;
+}
+
+.titulo {
+  flex-grow: 1;
+  margin-left: 15px;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.acciones button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.acciones {
+  display: flex;
+  align-items: center;
+}
+
+.volumen-container {
+  position: relative;
+  display: inline-block;
+}
+
+#volumenSlider {
+  position: absolute;
+  bottom: 100%; /* Se despliega hacia arriba */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  display: none;
+  transition: opacity 0.3s ease;
+  background: #ccc;
+  border-radius: 5px;
+}
+
+.reproductor-abajo {
+  position: absolute; /* 🔧 Permite ubicarlo dentro de fondo1 */
+  bottom: 0;           /* 📍 Lo pega al borde inferior */
+  left: 50%;           /* 📌 Lo centra horizontalmente */
+  transform: translateX(-50%); /* 🎯 Centrado perfecto */
+  z-index: 20;         /* 🔝 Asegura que esté por encima de otros elementos */
+}
+
+/* 📝 Comentarios para moverlo fácilmente:
+   - Para subirlo un poco: cambiá `bottom: 0` por `bottom: 20px` (o el valor que quieras).
+   - Para moverlo a la izquierda: cambiá `left: 50%` por `left: 30%`.
+   - Para alinearlo a la izquierda sin centrar: eliminá `transform` y usá `left: 0`.
+   - Para alinearlo a la derecha: usá `right: 0` y eliminá `left` y `transform`.
+*/
+
+
+/* 📅 Contador de días */
+.contador {
+  position: absolute;
+  /* 🔧 Ajustá estas coordenadas para mover el contador donde quieras */
+  top: 100%;     /* Cambiá este valor para moverlo verticalmente */
+  left: 50%;    /* Cambiá este valor para moverlo horizontalmente */
+  transform: translate(-50%, -50%); /* Centra el contador desde su punto de origen */
+  text-align: center;
+  color: white;
+  font-family: sans-serif;
+  z-index: 20;
+}
+
+.contador h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.tiempo {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.tiempo div {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 15px;
+  border-radius: 10px;
+  min-width: 70px;
+}
+
+.tiempo span {
+  font-size: 24px;
+  font-weight: bold;
+  display: block;
+}
+
+.tiempo p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* 🦋 Mariposas animadas */
+.mariposa {
+  position: absolute;
+  width: 100px;
+  opacity: 0;
+  animation:fadeIn 1.5s ease-in forwards; /* Aparece una vez */
+}
+
+.mariposa.flotante {
+  animation: 
+    fadeIn 1.5s ease-in forwards, /* Aparece una vez */
+    flotar 4s ease-in-out infinite; /* Flota en bucle */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes flotar {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+/* 📱 Responsive para celulares */
+@media (max-width: 600px) {
+  .mariposa {
+    width: 60px; /* Más chica en celulares */
+  }
+
+  .reproductor {
+     bottom: 20px;
+     left: 50%;
+     transform: translateX(-50%);
+  }
+
+  .contador {
+    top: 8vh;
+    left: 50vw;
+  }
+
+   /* 🖼️ Ajustes para fondos en celulares */
+  .fondo2,
+  .fondo3,
+  .fondo4 {
+    background-size: contain; /* Cubre todo el fondo */
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 100vh;
+    width: 100vw; /* ✅ Asegura que no se desborde horizontalmente */
+    background-color: #e5e6ea; /* o cualquier color que combine */
+  }
+
+  body {
+    overflow-x: hidden; /* 🧹 Evita scroll horizontal en todo el sitio */
+  }
+}
+
+/* 🖥️ Ajustes para escritorio grande */
+@media (min-width: 1200px) {
+  .mariposa {
+    width: 120px;
+  }
+}
+
+@font-face {
+  font-family: 'Adelia';
+  src: url('fuentes/adelia.ttf') format('truetype');
+}
+
+
+.mapa {
+ position: absolute;     /* 🔧 Lo posiciona dentro de fondo3 */
+  bottom: 0;              /* 📍 Lo pega al borde inferior */
+  left: 50%;              /* 📌 Centrado horizontalmente */
+  transform: translateX(-50%); /* 🎯 Centrado perfecto */
+  width: 90%;             /* 🧱 Ajustá el ancho como prefieras */
+  max-width: 600px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  z-index: 10;
+}
