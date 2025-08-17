@@ -20,7 +20,7 @@ body {
 
 .fondo1 { 
   position: relative;
-  background-image: url('imagenes/primero\ vertical.jpg');  /* Primera imagen con reproductor */
+  background-image: url('imagenes/primera1.jpg');  /* Primera imagen con reproductor */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -193,7 +193,7 @@ body {
 .contador {
   position: absolute;
   /* 🔧 Ajustá estas coordenadas para mover el contador donde quieras */
-  top: 100%;     /* Cambiá este valor para moverlo verticalmente */
+  top: 60%;     /* Cambiá este valor para moverlo verticalmente */
   left: 50%;    /* Cambiá este valor para moverlo horizontalmente */
   transform: translate(-50%, -50%); /* Centra el contador desde su punto de origen */
   text-align: center;
@@ -269,7 +269,7 @@ body {
   }
 
   .contador {
-    top: 8vh;
+    top: 38vh;
     left: 50vw;
   }
 
@@ -305,8 +305,8 @@ body {
 
 .mapa {
  position: absolute;     /* 🔧 Lo posiciona dentro de fondo3 */
-  bottom: 0;              /* 📍 Lo pega al borde inferior */
-  left: 50%;              /* 📌 Centrado horizontalmente */
+  bottom: 0;             /* 📍 Lo pega al borde inferior */
+  left: 50%;             /* 📌 Centrado horizontalmente */
   transform: translateX(-50%); /* 🎯 Centrado perfecto */
   width: 90%;             /* 🧱 Ajustá el ancho como prefieras */
   max-width: 600px;
