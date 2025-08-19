@@ -45,7 +45,7 @@ body {
   transform: translateX(-50%);
   font-family: 'Adelia', cursive;
   font-size: 60px;
-  color: rgb(6, 90, 187);
+  color: #0f2b9b;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
   z-index: 10; /* 🔝 Delante de las mariposas */
   display: flex;
@@ -79,7 +79,7 @@ body {
   text-align: center;
   font-size: 16px;
   color: white;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(81, 113, 255, 0.89);
   padding: 8px;
   border-radius: 8px;
   max-width: 600px;
@@ -88,7 +88,7 @@ body {
 
 /* 🎵 Reproductor de audio */
 .reproductor-foto {
-  background-color: black;
+  background-color: rgba(81, 113, 255, 0.89);
   color: white;
   font-family: sans-serif;
   padding: 10px;
@@ -214,7 +214,7 @@ body {
 }
 
 .tiempo div {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(81, 113, 255, 0.89);
   padding: 10px 15px;
   border-radius: 10px;
   min-width: 70px;
@@ -245,6 +245,16 @@ body {
     flotar 4s ease-in-out infinite; /* Flota en bucle */
 }
 
+/* 🦋 Mariposas grandes (usá esta clase si querés que algunas sean más grandes) */
+.mariposa.grande {
+  width: 110px; /* 🔧 Ajustá este valor para definir el tamaño de las mariposas grandes */
+}
+
+/* 🦋 Mariposas media (usá esta clase si querés que algunas sean más grandes) */
+.mariposa.media {
+  width: 90px; /* 🔧 Ajustá este valor para definir el tamaño de las mariposas grandes */
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -272,7 +282,7 @@ body {
     top: 38vh;
     left: 50vw;
   }
-
+  
    /* 🖼️ Ajustes para fondos en celulares */
   .fondo2,
   .fondo3,
@@ -314,4 +324,28 @@ body {
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   z-index: 10;
+}
+
+.confirmar-asistencia {
+  position: absolute; /* 🔧 Permite ubicarlo libremente dentro del fondo */
+  bottom: 180px;        /* 📍 Distancia desde el borde inferior */
+  left: 50%;           /* 📌 Centrado horizontalmente */
+  transform: translateX(-50%);
+  z-index: 20;
+}
+
+.confirmar-asistencia a {
+  font-size: 20px;
+  color: white;
+  background-color: rgba(81, 113, 255, 0.89);
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+}
+
+.confirmar-asistencia a:hover {
+  background-color: rgba(151, 150, 150, 0.514); /* 🎯 Efecto al pasar el mouse */
 }
