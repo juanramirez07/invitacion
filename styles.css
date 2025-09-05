@@ -20,7 +20,7 @@ body {
 
 .fondo1 { 
   position: relative;
-  background-image: url('imagenes/primera1.jpg');  /* Primera imagen con reproductor */
+  background-image: url('imagenes/primera2.jpg');  /* Primera imagen con reproductor */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
